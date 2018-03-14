@@ -19,6 +19,8 @@ public class PrincipalTest {
 	 * menorTest() desta forma como o projeto se encontra, enquanto que o teste
 	 * do método maiorTest() não possui problema algum para ser testado
 	 * 
+	 * R. Estão em pacotes diferentes, no caso a Classe B teria que estar no mesmo pacote da Classe de Test
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass

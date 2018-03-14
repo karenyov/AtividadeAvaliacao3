@@ -25,7 +25,6 @@ public class PrincipalTest {
 
 	@Test
 	public void test() {
-		;
 		assertEquals("10 - 6 = 4", 4, A.diff(10, 6));
 	}
 

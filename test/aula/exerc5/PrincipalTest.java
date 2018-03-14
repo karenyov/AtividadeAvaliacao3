@@ -2,8 +2,13 @@ package aula.exerc5;
 
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import org.junit.Before;
 import org.junit.Test;
+
+import aula.A;
 
 /**
  * @author Karen 11 de mar de 2018
@@ -22,13 +27,23 @@ public class PrincipalTest {
 	 * 
 	 * @throws java.lang.Exception
 	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	private A a;
+
+	@Before
+	public void setUp() {
+		a = new A();
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testDobro() throws NoSuchMethodException, SecurityException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException {
+
+		Method metodoDobro = A.class.getDeclaredMethod("dobro", int.class);
+		metodoDobro.setAccessible(true);
+		int r = (int) metodoDobro.invoke(a, 2);
+		/* checa se o resultado é 4 */
+		assertEquals(4, r, 0);
+
 	}
 
 }

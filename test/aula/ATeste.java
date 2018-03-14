@@ -1,22 +1,20 @@
 package aula;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
-import static org.junit.Assert.*;
+import aula.A;
+
 import static org.mockito.Mockito.*;
+
 
 /**
  * @author Karen 11 de mar de 2018
  */
 public class ATeste {
 
+	@Mock
 	private A a;
-
-	@Before
-	public void setUp() {
-		a = new A();
-	}
 
 	@Test(expected = Exception.class)
 	public void test1() throws Exception {
@@ -35,6 +33,5 @@ public class ATeste {
 		 */
 		doThrow(new Exception("Teste de exceção")).when(a).g(15);
 	}
-
 
 }
